@@ -53,7 +53,7 @@ class Home extends React.Component {
 			<div className="container">
 				{this.props.articles.map((article, i) => {
 					return (
-						<Link className="card" key={i} to={ { pathname: "/article", search: "?url=" + article.url } }>
+						<Link className="card" key={i} to={ { pathname: "/article", search: `?id=${article.id}&title=${article.title}` } }>
 							<LazyLoad once height={200} offset={200}>
 								<img src={article.urlToImage} alt="unloaded no alt available"/>
 							</LazyLoad>
@@ -74,24 +74,18 @@ class Article extends React.Component {
 		super(props);
 		this.state = {
 			title: "<center>Loading article, this may take some time...</center>",
-			content: ""
+			content: "",
+			image: ""
 		}
 	}
 	componentDidMount() {
-		
 		const values = queryString.parse(this.props.location.search);
-		console.log(values);
-		if(!listicles[values.url]) {
-			fetch('https://wt-bc10bd70eac1ba2e1f09bbd50514e6a3-0.sandbox.auth0-extend.com/extract?url=' + values.url)
-			.then(res => res.json())
-			.then(json => {
-				this.setState({title: json.title, content: json.content});
-				listicles[values.url] = {title: json.title, content: json.content};
-			}) 
-		} else {
-			let a = listicles[values.url];
-			this.setState({title: a.title, content: a.content});
-		}
+		fetch('https://wt-bc10bd70eac1ba2e1f09bbd50514e6a3-0.sandbox.auth0-extend.com/newlyread?id=' + values.id)
+		.then(res => res.json())
+		.then(json => {
+			console.log(json.article);
+			this.setState({title: json.article.title, content: json.article.content, image: json.main_image});
+		}) 
 	}
 	render() {
 		return ( 
