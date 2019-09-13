@@ -27,10 +27,7 @@ class App extends React.Component {
 	}
 
 	getArticles = () => {
-		let url = 'https://wt-bc10bd70eac1ba2e1f09bbd50514e6a3-0.sandbox.auth0-extend.com/newlyread'; 
-		if(this.state.category != "") {
-			url += `?category=${this.state.category}`
-		}
+		let url = 'https://wt-bc10bd70eac1ba2e1f09bbd50514e6a3-0.sandbox.auth0-extend.com/newlyread?category=technology'; 
 		fetch(url)
 		.then(res => res.json())
 		.then(json => {
@@ -47,14 +44,13 @@ class App extends React.Component {
 			<Router>
 			  <div className="App">
 				<header>
-					<img className="App-logo" src={Logo} alt="loading logo"/> <h1>ewlyread</h1>
-					<nav>
-						<a href="/">All</a>
-						<Link to={ {pathname: "/", search: `?category=technology` } }>
-							Technology
-						</Link>
-					</nav>
+					<div class="flex">
+            <img className="App-logo" src={Logo} alt="loading logo"/>
+            <h1>ewlyread</h1>
+          </div>
+          <p>Simple Tech News</p>
 				</header>
+        <script src="%PUBLIC_URL%/klajhbv.js"></script>
 				<Route exact path="/" component={(props) => <Home articles={this.state.articles}/>} />
 				<Route path="/article" component={Article} />
 			  </div>
