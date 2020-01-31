@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import Home from './components/Home.js';
 import Article from './components/Article.js';
 import Script from '@gumgum/react-script-tag';
+import MetaTags from 'react-meta-tags';
 
 class App extends React.Component {
 	constructor(props) {
@@ -44,6 +45,11 @@ class App extends React.Component {
 		return (
 			<Router>
 			  <div className="App">
+			  	<MetaTags>
+					<meta name="description" content="Newlyread is a free source for tech news. Articles are collected from various sources for convenience."/>
+					<meta property="og:title" content="Newlyread - Fast tech news FREE forever"/>
+					<meta property="og:image" content={Logo}/>
+				</MetaTags>
 				<header>
 					<div className="flex">
 						<img className="App-logo" src={Logo} alt="loading logo"/>
