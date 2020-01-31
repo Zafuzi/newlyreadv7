@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@gumgum/react-script-tag": "^0.0.3",
     "html-react-parser": "^0.9.1",
     "query-string": "^6.8.1",
     "react": "^16.8.6",

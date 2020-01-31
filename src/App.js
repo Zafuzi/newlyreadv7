@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import Logo from './logo.png';
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import Home from './components/Home.js';
 import Article from './components/Article.js';
+import Script from '@gumgum/react-script-tag';
 
 class App extends React.Component {
 	constructor(props) {
@@ -22,7 +23,7 @@ class App extends React.Component {
 	}
 
 	componentDidUpdate = () => {
-		if(this.state.articles.length == 0)
+		if(this.state.articles.length === 0)
 			this.getArticles();
 	}
 
@@ -44,13 +45,17 @@ class App extends React.Component {
 			<Router>
 			  <div className="App">
 				<header>
-					<div class="flex">
-            <img className="App-logo" src={Logo} alt="loading logo"/>
-            <h1>ewlyread</h1>
-          </div>
-          <p>Simple Tech News</p>
+					<div className="flex">
+						<img className="App-logo" src={Logo} alt="loading logo"/>
+						<h1>ewlyread</h1>
+					</div>
+					<p>Simple Tech News</p>
+					<Script
+						src="plausi.js"
+						type="text/javascript"
+						async
+					/>
 				</header>
-        <script src="%PUBLIC_URL%/klajhbv.js"></script>
 				<Route exact path="/" component={(props) => <Home articles={this.state.articles}/>} />
 				<Route path="/article" component={Article} />
 			  </div>

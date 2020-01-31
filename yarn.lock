@@ -929,6 +929,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-9.0.1.tgz#c27b391d8457d1e893f1eddeaf5e5412d12ffbb5"
   integrity sha512-6It2EVfGskxZCQhuykrfnALg7oVeiI6KclWSmGDqB0AiInVrTGB9Jp9i4/Ad21u9Jde/voVQz6eFX/eSg/UsPA==
 
+"@gumgum/react-script-tag@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@gumgum/react-script-tag/-/react-script-tag-0.0.3.tgz#fcf1635a7fa4d8076decb40cd68fd50d565b2de5"
+  integrity sha512-8JwB4ArAxk6t9ECbg2W7HVYMKVvSt58Sw9YBnysjc/LobPAl16zF84LqEYhlUk5zW4IO22iGCZbrfsuWCwmolA==
+
 "@hapi/address@2.x.x":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.1.tgz#61395b5ed94c4cb19c2dc4c85969cff3d40d583f"
